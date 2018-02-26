@@ -6,9 +6,21 @@
     }).then(res => {
         let titles = ""
         res.results.forEach(m => {
+                //<h2>${m.title}</h2>
+                //<img src="https://image.tmdb.org/t/p/w154${m.poster_path}" />
             titles += `
-                <h2>${m.title}</h2>
-                <img src="https://image.tmdb.org/t/p/w154${m.poster_path}" />
+
+
+                    <img class="card-img-top" src="https://image.tmdb.org/t/p/w154${m.poster_path}" alt="Card image cap">
+                    
+                        <h4 class="card-title">${m.title}</h4>
+                        <span class="card-text">${m.overview}</span>
+                    
+                    
+                        <span class="list-group-item"> ${m.genre} </span>
+                        <span class="list-group-item">${m.release_date}</span>
+                    
+           
             `
         })
 
